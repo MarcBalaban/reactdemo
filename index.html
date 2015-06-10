@@ -2,11 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>]
-  <script src="http://fb.me/react-0.12-2.js"></script>
-  <script src="http://fb.me/JSXTransformer-0.12-2.js"></script>
+  <title>Hello World</title>
+  <script src="http://fb.me/react-0.12.2.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
 </head>
 <body>
+
+<script type="text/jsx">
+
+var App = React.createClass({
+  getDefaultProps:function(){
+    return {
+      txt: 'Hello World',
+      cat: 0
+    }
+  },
+  propTypes: {
+    txt: React.PropTypes.string,
+    cat: React.PropTypes.number.isRequired
+  },
+  render:function(){
+    var txt = this.props.txt;
+    return (
+      <div>
+        <h1>{txt}</h1>
+      </div>
+    )
+  }
+});
+
+React.render(<App />, document.body)
+
+</script>
 
 </body>
 </html>
